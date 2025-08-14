@@ -1,0 +1,324 @@
+/* --- BIẾN VÀ THIẾT LẬP CƠ BẢN --- */
+:root {
+    --primary-color: #007bff;
+    --light-bg: #FFFFFF;
+    --light-text: #333333;
+    --light-secondary-bg: #f8f9fa;
+    --dark-bg: #121212;
+    --dark-text: #e0e0e0;
+    --dark-secondary-bg: #1e1e1e;
+    --border-color-light: #ddd;
+    --border-color-dark: #444;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--light-bg);
+    color: var(--light-text);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* --- DARK MODE --- */
+body.dark-mode {
+    background-color: var(--dark-bg);
+    color: var(--dark-text);
+}
+
+/* --- HEADER --- */
+.site-header {
+    background-color: var(--light-secondary-bg);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode .site-header {
+    background-color: var(--dark-secondary-bg);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.logo a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-ul {
+    display: flex;
+    list-style-type: none;
+    gap: 1.5rem;
+}
+
+.nav-ul a {
+    text-decoration: none;
+    color: var(--light-text);
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+body.dark-mode .nav-ul a {
+    color: var(--dark-text);
+}
+
+.header-controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.hamburger-menu,
+#theme-switcher {
+    display: none;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: inherit;
+}
+
+/* --- HERO SECTION --- */
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 4rem 2rem;
+    min-height: 90vh;
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.hero-intro {
+    font-size: 1.2rem;
+}
+
+.hero-name {
+    font-size: 3.5rem;
+    color: var(--primary-color);
+    margin: 0.5rem 0;
+}
+
+.hero-description {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+.hero-image img {
+    max-width: 350px;
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+}
+
+/* --- PROJECTS SECTION --- */
+.projects-section {
+    padding: 4rem 2rem;
+    background-color: var(--light-secondary-bg);
+}
+
+body.dark-mode .projects-section {
+    background-color: var(--dark-secondary-bg);
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+}
+
+.projects-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr;
+}
+
+.project-card {
+    background-color: var(--light-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+body.dark-mode .project-card {
+    background-color: var(--dark-bg);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.project-content {
+    padding: 1.5rem;
+}
+
+.project-tech {
+    margin: 1rem 0;
+}
+
+.project-tech span {
+    background-color: #e9ecef;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    margin-right: 0.5rem;
+}
+
+body.dark-mode .project-tech span {
+    background-color: #333;
+}
+
+.project-links a {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    color: var(--light-text);
+}
+
+body.dark-mode .project-links a {
+    color: var(--dark-text);
+}
+
+/* --- CONTACT SECTION --- */
+.contact-section {
+    padding: 4rem 2rem;
+}
+
+.contact-section p {
+    text-align: center;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 2rem auto 0 auto;
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color-light);
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+body.dark-mode .contact-form input,
+body.dark-mode .contact-form textarea {
+    background-color: #333;
+    border-color: var(--border-color-dark);
+    color: var(--dark-text);
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #0056b3;
+}
+
+
+/* --- RESPONSIVE & MOBILE MENU --- */
+@media (max-width: 768px) {
+    .nav {
+        display: static;
+    }
+
+    #theme-switcher,
+    .hamburger-menu {
+        display: block;
+    }
+
+    .nav-ul {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 250px;
+        height: 100vh;
+        background-color: var(--light-secondary-bg);
+        padding-top: 5rem;
+        z-index: 1000;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    body.dark-mode .nav-ul {
+        background-color: var(--dark-secondary-bg);
+    }
+
+    .nav-ul.nav-open {
+        transform: translateX(0);
+    }
+
+    .hero-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 769px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 992px) {
+    #theme-switcher {
+        display: block;
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
